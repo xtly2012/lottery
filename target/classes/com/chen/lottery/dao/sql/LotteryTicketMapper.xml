@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="LotteryTicket" >
+  <typeAlias alias="LotteryTicket" type="com.chen.lottery.domain.LotteryTicket" />
+  
+  <resultMap id="LotteryTicketMap" class="LotteryTicket" >
+    <result column="LOTTERY_RUN_TIME" property="lotteryRunTime" jdbcType="DATETIME" />
+    <result column="LOTTERY_PERIOD_NUM" property="lotteryPeriodNum" jdbcType="NUMBER" />
+    <result column="LOTTERY_RED_FIRST" property="lotteryRedFirst" jdbcType="VARCHAR" />
+    <result column="LOTTERY_RED_SECOND" property="lotteryRedSecond" jdbcType="VARCHAR" />
+    <result column="LOTTERY_RED_THIRD" property="lotteryRedThird" jdbcType="VARCHAR" />
+    <result column="LOTTERY_RED_FOURTH" property="lotteryRedFourth" jdbcType="VARCHAR" />
+    <result column="LOTTERY_RED_FIFTH" property="lotteryRedFifth" jdbcType="VARCHAR" />
+    <result column="LOTTERY_RED_SIXTH" property="lotteryRedSixth" jdbcType="DECIMAL" />
+    <result column="LOTTERY_BLUE_FIRST" property="lotteryBlueFirst" jdbcType="VARCHAR" />
+    <result column="LOTTERY_SALE_VOLUME" property="lotterySaleVolume" jdbcType="NUMBER" />
+  </resultMap>
+  
+  <insert id="addSelective" parameterClass="LotteryTicket" >
+    insert into LOTTERY_TICKET
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="lotteryRunTime" >
+        LOTTERY_RUN_TIME
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryPeriodNum" >
+        LOTTERY_PERIOD_NUM
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedFirst" >
+        LOTTERY_RED_FIRST
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedSecond" >
+        LOTTERY_RED_SECOND
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedThird" >
+        LOTTERY_RED_THIRD
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedFourth" >
+        LOTTERY_RED_FOURTH
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedFifth" >
+        LOTTERY_RED_FIFTH
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedSixth" >
+        LOTTERY_RED_SIXTH
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryBlueFirst" >
+        LOTTERY_BLUE_FIRST
+      </isNotNull>
+      <isNotNull prepend="," property="lotterySaleVolume" >
+        LOTTERY_SALE_VOLUME
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="lotteryRunTime" >
+        #lotteryRunTime#
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryPeriodNum" >
+        #lotteryPeriodNum#
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedFirst" >
+        #lotteryRedFirst#
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedSecond" >
+        #lotteryRedSecond#
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedThird" >
+        #lotteryRedThird#
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedFourth" >
+        #lotteryRedFourth#
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedFifth" >
+        #lotteryRedFifth#
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryRedSixth" >
+        #lotteryRedSixth#
+      </isNotNull>
+      <isNotNull prepend="," property="lotteryBlueFirst" >
+        #lotteryBlueFirst#
+      </isNotNull>
+      <isNotNull prepend="," property="lotterySaleVolume" >
+        #lotterySaleVolume#
+      </isNotNull>
+      )
+    </dynamic>
+  </insert>
+  
+    <select id="querySelective" resultMap="LotteryTicketMap" parameterClass="LotteryTicket" >
+    select * from LOTTERY_TICKET
+    <dynamic prepend=" where " >
+      <isNotNull prepend=" and " property="lotteryRunTime" >
+        LOTTERY_RUN_TIME = #lotteryRunTime#
+      </isNotNull>
+      <isNotNull prepend=" and " property="lotteryPeriodNum" >
+        LOTTERY_PERIOD_NUM = #lotteryPeriodNum#
+      </isNotNull>
+      <isNotNull prepend=" and " property="lotteryRedFirst" >
+        LOTTERY_RED_FIRST = #lotteryRedFirst#
+      </isNotNull>
+      <isNotNull prepend=" and " property="lotteryRedSecond" >
+        LOTTERY_RED_SECOND = #lotteryRedSecond#
+      </isNotNull>
+      <isNotNull prepend=" and " property="lotteryRedThird" >
+        LOTTERY_RED_THIRD = #lotteryRedThird#
+      </isNotNull>
+      <isNotNull prepend=" and " property="lotteryRedFourth" >
+        LOTTERY_RED_FOURTH = #lotteryRedFourth#
+      </isNotNull>
+      <isNotNull prepend=" and " property="lotteryRedFifth" >
+        LOTTERY_RED_FIFTH = #lotteryRedFifth#
+      </isNotNull>
+      <isNotNull prepend=" and " property="lotteryRedSixth" >
+        LOTTERY_RED_SIXTH = #lotteryRedSixth#
+      </isNotNull>
+      <isNotNull prepend=" and " property="lotteryBlueFirst" >
+        LOTTERY_BLUE_FIRST = #lotteryBlueFirst#
+      </isNotNull>
+      <isNotNull prepend=" and " property="lotterySaleVolume" >
+        LOTTERY_SALE_VOLUME = #lotterySaleVolume#
+      </isNotNull>
+    </dynamic>
+  </select>
+</sqlMap>
