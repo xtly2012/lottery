@@ -3,6 +3,7 @@ package com.chen.lottery.dao;
 import java.util.List;
 
 import com.chen.lottery.domain.LotteryTicket;
+import com.chen.lottery.domain.expend.LotterySectionQuery;
 
 /**
  * 彩票信息数据操作类
@@ -27,4 +28,6 @@ public interface LotteryTicketDAO
     public void addSelective(LotteryTicket lottery);
     
     public List<LotteryTicket> querySelective(LotteryTicket lottery);
+    
+    public List<LotteryTicket> querySection(LotterySectionQuery query);
 }

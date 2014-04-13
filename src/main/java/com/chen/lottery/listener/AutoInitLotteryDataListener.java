@@ -15,6 +15,7 @@ public class AutoInitLotteryDataListener implements ServletContextListener
 {
     public static Logger logger = LoggerFactory.getLogger(AutoInitLotteryDataListener.class); 
     
+    private static ServletContext context = null;
     
     public void contextDestroyed(ServletContextEvent arg0)
     {
@@ -24,33 +25,41 @@ public class AutoInitLotteryDataListener implements ServletContextListener
 
     public void contextInitialized(ServletContextEvent event)
     {
-        while(true)
-        {
-            try
+        context = event.getServletContext();
+        Thread thread = new Thread(){
+            public void run()
             {
-                System.out.println("初始化：autoInitLotterData");
-                ServletContext context = event.getServletContext();
-                WebApplicationContext wac = WebApplicationContextUtils.getRequiredWebApplicationContext(context);  
-                AutoInitLotteryDataService dataService = wac.getBean(AutoInitLotteryDataService.class);
-                dataService.autoInitLotterData();
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-            finally
-            {
-                try
+                while(true)
                 {
-                    Thread.currentThread();
-                    Thread.sleep(300000);
-                }
-                catch(Exception e)
-                {
-                    e.printStackTrace();
+                    try
+                    {
+                        System.out.println("初始化：autoInitLotterData");
+                        WebApplicationContext wac = WebApplicationContextUtils.getRequiredWebApplicationContext(context);  
+                        AutoInitLotteryDataService dataService = wac.getBean(AutoInitLotteryDataService.class);
+                        dataService.autoInitLotterData();
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                    finally
+                    {
+                        try
+                        {
+                            Thread.currentThread();
+                            Thread.sleep(300000);
+                        }
+                        catch(Exception e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
-        }
+        };
+        
+        thread.start();
+            
     }
 
 }

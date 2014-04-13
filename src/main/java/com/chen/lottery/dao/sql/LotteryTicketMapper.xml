@@ -2,6 +2,7 @@
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
 <sqlMap namespace="LotteryTicket" >
   <typeAlias alias="LotteryTicket" type="com.chen.lottery.domain.LotteryTicket" />
+  <typeAlias alias="LotterySectionQuery" type="com.chen.lottery.domain.expend.LotterySectionQuery"/>
   
   <resultMap id="LotteryTicketMap" class="LotteryTicket" >
     <result column="LOTTERY_RUN_TIME" property="lotteryRunTime" jdbcType="DATETIME" />
@@ -87,7 +88,7 @@
     </dynamic>
   </insert>
   
-    <select id="querySelective" resultMap="LotteryTicketMap" parameterClass="LotteryTicket" >
+  <select id="querySelective" resultMap="LotteryTicketMap" parameterClass="LotteryTicket" >
     select * from LOTTERY_TICKET
     <dynamic prepend=" where " >
       <isNotNull prepend=" and " property="lotteryRunTime" >
@@ -119,6 +120,30 @@
       </isNotNull>
       <isNotNull prepend=" and " property="lotterySaleVolume" >
         LOTTERY_SALE_VOLUME = #lotterySaleVolume#
+      </isNotNull>
+    </dynamic>
+  </select>
+  
+  <select id="querySection" resultMap="LotteryTicketMap" parameterClass="LotterySectionQuery" >
+    select * from LOTTERY_TICKET
+    <dynamic prepend=" where " >
+      <isNotNull prepend=" and " property="startTime" >
+        <![CDATA[LOTTERY_RUN_TIME >= #startTime#]]>
+      </isNotNull>
+      <isNotNull prepend=" and " property="endTime" >
+        <![CDATA[LOTTERY_RUN_TIME <= #endTime#]]>
+      </isNotNull>
+      <isNotNull prepend=" and " property="startPeriodNum" >
+        <![CDATA[LOTTERY_PERIOD_NUM >= #startPeriodNum#]]>
+      </isNotNull>
+      <isNotNull prepend=" and " property="startPeriodNum" >
+        <![CDATA[LOTTERY_PERIOD_NUM >= #startPeriodNum#]]>
+      </isNotNull>
+      <isNotNull prepend=" and " property="endPeriodNum" >
+        <![CDATA[LOTTERY_PERIOD_NUM <= #endPeriodNum#]]>
+      </isNotNull>
+      <isNotNull prepend=" order by " property="orderStr" >
+        $orderStr$
       </isNotNull>
     </dynamic>
   </select>
