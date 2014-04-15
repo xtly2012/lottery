@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.chen.lottery.dao.LotteryTicketDAO;
 import com.chen.lottery.domain.LotteryTicket;
+import com.chen.lottery.domain.expend.LotterySectionQuery;
 import com.chen.lottery.listener.BaseException;
 import com.chen.lottery.service.LotteryTicketService;
 
@@ -28,7 +29,7 @@ public class LotteryTicketServiceImpl implements LotteryTicketService
             throw new IllegalArgumentException();
         }
         
-        LotteryTicket queryTicket =this.querySelective(lottery.getLotteryPeriodNum());
+        LotteryTicket queryTicket =this.queryByPeriodNum(lottery.getLotteryPeriodNum());
         if (queryTicket != null)
         {
             return;
@@ -37,8 +38,9 @@ public class LotteryTicketServiceImpl implements LotteryTicketService
         logger.debug("add lottery");
         this.lotteryTicketDao.addSelective(lottery);
     }
+    
 
-    public LotteryTicket querySelective(Integer lotteryPeriodNum) throws BaseException
+    public LotteryTicket queryByPeriodNum(Integer lotteryPeriodNum) throws BaseException
     {
        LotteryTicket query = new LotteryTicket();
        query.setLotteryPeriodNum(lotteryPeriodNum);
@@ -57,6 +59,12 @@ public class LotteryTicketServiceImpl implements LotteryTicketService
        {
            return lotteryList.get(0);
        }
+    }
+
+
+    public List<LotteryTicket> querySection(LotterySectionQuery query) throws BaseException
+    {
+        return this.lotteryTicketDao.querySection(query);
     }
     
     

@@ -142,7 +142,9 @@
       <isNotNull prepend=" and " property="endPeriodNum" >
         <![CDATA[LOTTERY_PERIOD_NUM <= #endPeriodNum#]]>
       </isNotNull>
-      <isNotNull prepend=" order by " property="orderStr" >
+    </dynamic>
+    <dynamic prepend=" order by ">
+    	<isNotNull property="orderStr" >
         $orderStr$
       </isNotNull>
     </dynamic>

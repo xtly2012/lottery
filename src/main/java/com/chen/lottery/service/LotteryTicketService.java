@@ -1,6 +1,9 @@
 package com.chen.lottery.service;
 
+import java.util.List;
+
 import com.chen.lottery.domain.LotteryTicket;
+import com.chen.lottery.domain.expend.LotterySectionQuery;
 import com.chen.lottery.listener.BaseException;
 
 /**
@@ -22,5 +25,7 @@ public interface LotteryTicketService
 {
     void addLotteryTicket(LotteryTicket lottery) throws BaseException;
     
-    LotteryTicket querySelective(Integer lotteryPeriodNum) throws BaseException;
+    LotteryTicket queryByPeriodNum(Integer lotteryPeriodNum) throws BaseException;
+    
+    List<LotteryTicket> querySection(LotterySectionQuery query) throws BaseException;
 }

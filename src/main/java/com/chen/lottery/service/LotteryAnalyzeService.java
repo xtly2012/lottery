@@ -2,6 +2,7 @@ package com.chen.lottery.service;
 
 import java.util.List;
 
+import com.chen.lottery.listener.BaseException;
 import com.chen.lottery.service.bo.BallCountBO;
 
 /**
@@ -26,5 +27,5 @@ public interface LotteryAnalyzeService
      * 
      * @return 分析结果
      */
-    List<BallCountBO> analyzeBallLine();
+    List<BallCountBO> analyzeBallLine() throws BaseException;
 }

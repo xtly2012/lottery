@@ -21,10 +21,6 @@ public class AutoInitLotteryDataServiceTest extends UnitilsJUnit4Support
         
     }
     
-    public void test()
-    {
-    }
-    
     @Test
     public void testAutoInitLotterData()
     {
