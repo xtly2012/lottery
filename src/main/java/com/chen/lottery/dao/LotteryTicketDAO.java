@@ -3,8 +3,8 @@ package com.chen.lottery.dao;
 import java.util.List;
 
 import com.chen.lottery.domain.LotteryTicket;
-import com.chen.lottery.domain.expend.LotterySectionQuery;
-import com.chen.lottery.domain.expend.LotteryTicketQuery;
+import com.chen.lottery.service.bo.LotterySectionQuery;
+import com.chen.lottery.service.bo.LotteryTicketQuery;
 
 /**
  * 彩票信息数据操作类

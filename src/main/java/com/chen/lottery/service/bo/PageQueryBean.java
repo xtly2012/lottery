@@ -1,4 +1,4 @@
-package com.chen.lottery.domain.expend;
+package com.chen.lottery.service.bo;
 
 public interface PageQueryBean {
     

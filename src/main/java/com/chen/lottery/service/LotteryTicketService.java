@@ -3,10 +3,10 @@ package com.chen.lottery.service;
 import java.util.List;
 
 import com.chen.lottery.domain.LotteryTicket;
-import com.chen.lottery.domain.expend.LotterySectionQuery;
-import com.chen.lottery.domain.expend.LotteryTicketQuery;
 import com.chen.lottery.listener.BaseException;
 import com.chen.lottery.service.bo.BlueBallColumnBO;
+import com.chen.lottery.service.bo.LotterySectionQuery;
+import com.chen.lottery.service.bo.LotteryTicketQuery;
 import com.chen.lottery.service.bo.RedBallColumnBO;
 
 /**

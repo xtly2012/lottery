@@ -9,13 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chen.lottery.domain.LotteryTicket;
-import com.chen.lottery.domain.expend.LotterySectionQuery;
-import com.chen.lottery.domain.expend.LotteryTicketQuery;
 import com.chen.lottery.listener.BaseException;
 import com.chen.lottery.service.LotteryAnalyzeService;
 import com.chen.lottery.service.LotteryTicketService;
 import com.chen.lottery.service.bo.BallCountBO;
 import com.chen.lottery.service.bo.BlueBallColumnBO;
+import com.chen.lottery.service.bo.LotterySectionQuery;
+import com.chen.lottery.service.bo.LotteryTicketQuery;
 import com.chen.lottery.service.bo.RedBallColumnBO;
 
 @Service(value="LotteryAnalyzeService")

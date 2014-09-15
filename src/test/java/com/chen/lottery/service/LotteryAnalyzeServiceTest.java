@@ -12,10 +12,7 @@ import org.unitils.spring.annotation.SpringBeanByType;
 
 import com.chen.lottery.controller.to.BallLineTO;
 import com.chen.lottery.domain.LotteryTicket;
-import com.chen.lottery.domain.expend.LotterySectionQuery;
 import com.chen.lottery.service.bo.BallCountBO;
-import com.chen.lottery.service.bo.BlueBallColumnBO;
-import com.chen.lottery.service.bo.RedBallColumnBO;
 import com.chen.test.support.UnitilsJUnit4Support;
 
 public class LotteryAnalyzeServiceTest extends UnitilsJUnit4Support

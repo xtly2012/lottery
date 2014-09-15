@@ -8,9 +8,9 @@ import org.unitils.inject.annotation.TestedObject;
 import org.unitils.spring.annotation.SpringBeanByType;
 
 import com.chen.lottery.domain.LotteryTicket;
-import com.chen.lottery.domain.expend.LotterySectionQuery;
-import com.chen.lottery.domain.expend.LotteryTicketQuery;
 import com.chen.lottery.service.bo.BlueBallColumnBO;
+import com.chen.lottery.service.bo.LotterySectionQuery;
+import com.chen.lottery.service.bo.LotteryTicketQuery;
 import com.chen.lottery.service.bo.RedBallColumnBO;
 import com.chen.test.support.UnitilsJUnit4Support;
 

@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 
 import com.chen.lottery.dao.LotteryTicketDAO;
 import com.chen.lottery.domain.LotteryTicket;
-import com.chen.lottery.domain.expend.LotterySectionQuery;
-import com.chen.lottery.domain.expend.LotteryTicketQuery;
+import com.chen.lottery.service.bo.LotterySectionQuery;
+import com.chen.lottery.service.bo.LotteryTicketQuery;
 
 @Component(value="LotteryTicketDAO")
 public class LotteryTicketDAOImpl extends IbatisClientDaoSupport implements LotteryTicketDAO 
