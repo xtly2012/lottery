@@ -2,7 +2,7 @@ package com.chen.lottery.domain.expend;
 
 import java.util.Date;
 
-public class LotterySectionQuery extends BaseQueryBean
+public class LotterySectionQuery implements TimeQueryBean
 {
     private Date startTime;
     
@@ -11,6 +11,8 @@ public class LotterySectionQuery extends BaseQueryBean
     private Integer startPeriodNum;
     
     private Integer endPeriodNum;
+    
+    private String orderStr;
 
     public Date getStartTime()
     {
@@ -51,5 +53,13 @@ public class LotterySectionQuery extends BaseQueryBean
     {
         this.endPeriodNum = endPeriodNum;
     }
+
+	public String getOrderStr() {
+		return this.orderStr;
+	}
+
+	public void setOrderStr(String orderStr) {
+		this.orderStr = orderStr;
+	}
     
 }

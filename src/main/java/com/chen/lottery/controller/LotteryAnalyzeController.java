@@ -1,6 +1,8 @@
 package com.chen.lottery.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,7 +31,23 @@ public class LotteryAnalyzeController
     {
         try
         {
-            List<BallCountBO> countList = this.analyzeService.analyzeBallLine();
+            String startTimeStr = request.getParameter("startTime");
+            String endTimeStr = request.getParameter("endTime");
+            Date startTime = null;
+            Date endTime = null;
+            
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            if (startTimeStr != null)
+            {
+                startTime = dateFormat.parse(startTimeStr);
+            }
+            
+            if (endTimeStr != null)
+            {
+                endTime = dateFormat.parse(endTimeStr);
+            }
+            
+            List<BallCountBO> countList = this.analyzeService.analyzeBallLine(startTime, endTime);
             countList = this.filterData(countList, 20);
             
             Integer[][] valueArr = new Integer[33][countList.size()];

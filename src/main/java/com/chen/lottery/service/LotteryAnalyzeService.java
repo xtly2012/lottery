@@ -1,7 +1,9 @@
 package com.chen.lottery.service;
 
+import java.util.Date;
 import java.util.List;
 
+import com.chen.lottery.domain.LotteryTicket;
 import com.chen.lottery.listener.BaseException;
 import com.chen.lottery.service.bo.BallCountBO;
 
@@ -27,5 +29,21 @@ public interface LotteryAnalyzeService
      * 
      * @return 分析结果
      */
-    List<BallCountBO> analyzeBallLine() throws BaseException;
+    List<BallCountBO> analyzeBallLine(Date startTime, Date endTime) throws BaseException;
+    
+    /**
+     * 双色求概率分析
+     * 
+     * @return
+     * @throws BaseException
+     */
+    int[][] analyzeProbabilityBall() throws BaseException;
+    
+    /**
+     * 相似性分析
+     * 
+     * @return
+     * @throws BaseException
+     */
+    List<List<LotteryTicket>> analyzeLike() throws BaseException;
 }

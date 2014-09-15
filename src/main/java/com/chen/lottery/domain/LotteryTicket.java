@@ -196,7 +196,7 @@ public class LotteryTicket
                 strBuf.append(method.invoke(this));
                 strBuf.append("\"");
             }
-            strBuf.append("}");
+            strBuf.append("}\r\n");
             
             return strBuf.toString();
         }

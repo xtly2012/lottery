@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import com.chen.lottery.dao.LotteryTicketDAO;
 import com.chen.lottery.domain.LotteryTicket;
 import com.chen.lottery.domain.expend.LotterySectionQuery;
+import com.chen.lottery.domain.expend.LotteryTicketQuery;
 
 @Component(value="LotteryTicketDAO")
 public class LotteryTicketDAOImpl extends IbatisClientDaoSupport implements LotteryTicketDAO 
@@ -18,9 +19,9 @@ public class LotteryTicketDAOImpl extends IbatisClientDaoSupport implements Lott
     }
 
     @SuppressWarnings("unchecked")
-    public List<LotteryTicket> querySelective(LotteryTicket lottery)
+    public List<LotteryTicket> querySelective(LotteryTicketQuery lotteryQuery)
     {
-        return (List<LotteryTicket>)this.getSqlMapClientTemplate().queryForList("LotteryTicket.querySelective", lottery);
+        return (List<LotteryTicket>)this.getSqlMapClientTemplate().queryForList("LotteryTicket.querySelective", lotteryQuery);
     }
 
     @SuppressWarnings("unchecked")

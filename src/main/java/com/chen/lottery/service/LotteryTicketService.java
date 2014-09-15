@@ -4,7 +4,10 @@ import java.util.List;
 
 import com.chen.lottery.domain.LotteryTicket;
 import com.chen.lottery.domain.expend.LotterySectionQuery;
+import com.chen.lottery.domain.expend.LotteryTicketQuery;
 import com.chen.lottery.listener.BaseException;
+import com.chen.lottery.service.bo.BlueBallColumnBO;
+import com.chen.lottery.service.bo.RedBallColumnBO;
 
 /**
  * 采票服务类
@@ -28,4 +31,10 @@ public interface LotteryTicketService
     LotteryTicket queryByPeriodNum(Integer lotteryPeriodNum) throws BaseException;
     
     List<LotteryTicket> querySection(LotterySectionQuery query) throws BaseException;
+    
+    List<LotteryTicket> querySelective(LotteryTicketQuery query) throws BaseException;
+    
+    RedBallColumnBO queryRedBallColumn() throws BaseException;
+    
+    BlueBallColumnBO queryBlueBallColumn() throws BaseException;
 }

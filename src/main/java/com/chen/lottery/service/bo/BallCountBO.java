@@ -8,6 +8,8 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.chen.lottery.constants.LotteryConstants;
+
 
 public class BallCountBO implements Cloneable,Serializable
 {
@@ -16,13 +18,9 @@ public class BallCountBO implements Cloneable,Serializable
      */
     private static final long serialVersionUID = 1L;
     
-    public static String[] redLotteryNum = {"01", "02", "03", "04", "05", "06", "07", "08", "09", 
-            "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
-            "20", "21", "22", "23", "24", "25", "26", "27", "28", "29",
-            "30", "31", "32", "33"};
+    public static String[] redLotteryNum = LotteryConstants.RED_LOTTERY_NUM;
     
-    public static String[] blueLotteryNum = {"01", "02", "03", "04", "05", "06", "07", "08", "09", 
-            "10", "11", "12", "13", "14", "15", "16"};
+    public static String[] blueLotteryNum = LotteryConstants.BLUE_LOTTERY_NUM;
 
     /**
      * 彩票期数
