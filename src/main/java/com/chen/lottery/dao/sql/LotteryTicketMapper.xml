@@ -2,8 +2,8 @@
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
 <sqlMap namespace="LotteryTicket" >
   <typeAlias alias="LotteryTicket" type="com.chen.lottery.domain.LotteryTicket" />
-  <typeAlias alias="LotteryTicketQuery" type="com.chen.lottery.domain.expend.LotteryTicketQuery" />
-  <typeAlias alias="LotterySectionQuery" type="com.chen.lottery.domain.expend.LotterySectionQuery"/>
+  <typeAlias alias="LotteryTicketQuery" type="com.chen.lottery.service.bo.LotteryTicketQuery" />
+  <typeAlias alias="LotterySectionQuery" type="com.chen.lottery.service.bo.LotterySectionQuery"/>
   
   <resultMap id="LotteryTicketMap" class="LotteryTicket" >
     <result column="LOTTERY_RUN_TIME" property="lotteryRunTime" jdbcType="DATETIME" />
