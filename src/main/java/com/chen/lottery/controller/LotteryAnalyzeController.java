@@ -19,7 +19,7 @@ import com.chen.lottery.service.LotteryAnalyzeService;
 import com.chen.lottery.service.bo.BallCountBO;
 
 @Controller
-public class LotteryAnalyzeController
+public class LotteryAnalyzeController extends BaseController
 {
     @Autowired
     private LotteryAnalyzeService analyzeService;
