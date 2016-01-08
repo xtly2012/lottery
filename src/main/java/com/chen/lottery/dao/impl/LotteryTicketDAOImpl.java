@@ -12,7 +12,6 @@ import com.chen.lottery.service.bo.LotteryTicketQuery;
 @Component(value="LotteryTicketDAO")
 public class LotteryTicketDAOImpl extends IbatisClientDaoSupport implements LotteryTicketDAO 
 {
-
     public void addSelective(LotteryTicket lottery)
     {
         this.getSqlMapClientTemplate().insert("LotteryTicket.addSelective", lottery);

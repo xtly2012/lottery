@@ -82,7 +82,7 @@
 		<repository>
 			<id>maven server</id>
 			<name>intranet public groups</name>
-			<url>http://127.0.0.1/nexus/content/groups/public</url>
+			<url>http://repo.maven.apache.org/maven2/</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>

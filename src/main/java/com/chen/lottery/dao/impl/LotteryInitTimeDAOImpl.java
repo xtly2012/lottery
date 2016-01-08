@@ -12,17 +12,20 @@ import com.chen.lottery.domain.LotteryInitTime;
 public class LotteryInitTimeDAOImpl extends IbatisClientDaoSupport implements LotteryInitTimeDAO 
 {
 
+	@Override
     public void addSelective(LotteryInitTime lottery)
     {
         this.getSqlMapClientTemplate().insert("LotteryInitTime.addSelective", lottery);
     }
 
+	@Override
     @SuppressWarnings("unchecked")
     public List<LotteryInitTime> querySelective(LotteryInitTime lottery)
     {
         return (List<LotteryInitTime>)this.getSqlMapClientTemplate().queryForList("LotteryInitTime.querySelective", lottery);
     }
 
+	@Override
     public Date queryMaxInitTime()
     {
         
