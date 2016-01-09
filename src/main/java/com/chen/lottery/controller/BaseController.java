@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public abstract class BaseController {
 	
 	@ExceptionHandler(Exception.class)
-	public ModelAndView handleException(Exception exception, HttpServletRequest request) {
-		return new ModelAndView();
+	public String handleException(Exception exception, HttpServletRequest request) {
+		return "/view/error/error.jsp";
 	}
 }
