@@ -80,7 +80,7 @@ public class LotteryAnalyzeController extends BaseController
         request.setAttribute("data", dataJson.toString());
         request.setAttribute("label", labelJson.toString());
         
-        return "/view/chart/line.jsp";        
+        return "/view/chart/line";        
     }
     
     private List<BallCountBO> filterData(List<BallCountBO> countList, int model)

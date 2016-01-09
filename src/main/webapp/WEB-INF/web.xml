@@ -5,15 +5,6 @@
 
 	<display-name>Web Application</display-name>
 	
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:META-INF/spring/appContext.xml</param-value>
-	</context-param>
-	
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	
 	<listener>
 		<listener-class>com.chen.lottery.listener.AutoInitLotteryDataListener</listener-class>
 	</listener>
@@ -23,7 +14,10 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:META-INF/spring/spring-mvc.xml</param-value>
+			<param-value>
+			    classpath:META-INF/spring/appContext.xml
+			    classpath:META-INF/spring/spring-mvc.xml
+			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

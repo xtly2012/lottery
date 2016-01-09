@@ -9,6 +9,6 @@ public abstract class BaseController {
 	
 	@ExceptionHandler(Exception.class)
 	public String handleException(Exception exception, HttpServletRequest request) {
-		return "/view/error/error.jsp";
+		return "/view/error/error";
 	}
 }
