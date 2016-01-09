@@ -6,6 +6,6 @@
 		lazyLoadingEnabled="true" errorTracingEnabled="true" maxRequests="512"
 		maxSessions="128" maxTransactions="32" useStatementNamespaces="true" />
 
-	<sqlMap resource="com/chen/lottery/dao/sql/LotteryTicketMapper.xml" />
-	<sqlMap resource="com/chen/lottery/dao/sql/LotteryInitTimeMapper.xml" />
+	<sqlMap resource="META-INF/ibatis/com/chen/lottery/LotteryTicketMapper.xml" />
+	<sqlMap resource="META-INF/ibatis/com/chen/lottery/LotteryInitTimeMapper.xml" />
 </sqlMapConfig>
